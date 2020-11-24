@@ -21,6 +21,7 @@
 {
     self = [super init];
     if (self) {
+        [WVURLProtocolService setSupportWKURLProtocol:YES];
         _webView = [[WKWebView alloc]initWithFrame:self.view.bounds];
         _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _webView.scrollView.scrollEnabled = YES;
@@ -59,7 +60,7 @@
         NSLog(@"%@",access_token);
         //        跳转回去
         [[NSNotificationCenter defaultCenter] postNotificationName:@"getAccessToken" object:access_token];
-        [self.navigationController popViewControllerAnimated:YES];
+        // [self.navigationController popViewControllerAnimated:YES];
     }else{
         NSLog(@"Not Found");
     }
@@ -67,6 +68,7 @@
 
 -(void)dealloc
 {
+    [WVURLProtocolService setSupportWKURLProtocol:YES];
     NSLog(@"dealloc  view");
     [_webView removeObserver:self forKeyPath:@"URL"];
     _webView =  nil;
