@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ALiTradeWebViewController.h"
 #import <AlibcTradeSDK/AlibcTradeSDK.h>
+#import <WindVane/WindVane.h>
 
 //#import "ALiCartService.h"
 
