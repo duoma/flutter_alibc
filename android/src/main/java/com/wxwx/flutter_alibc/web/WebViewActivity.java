@@ -108,7 +108,7 @@ public class WebViewActivity extends Activity {
                         callBack.success(accessToken);
                         callBack = null;
                     }
-                    finish();
+                    // finish();
                 }
             }
         };
