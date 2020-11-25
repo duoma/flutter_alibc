@@ -175,6 +175,12 @@ FlutterMethodChannel *_flutterAlibcChannel = nil;
         //        });
     }];
     
+    if(res == 1){
+        result(@{
+                    @"accessToken":@""
+                       });
+    }
+    
 //     if (res == 1) {
 //         //        新建一个view
 //         FlutterWxViewCtrlViewController *WxVC = [[FlutterWxViewCtrlViewController alloc] init];
