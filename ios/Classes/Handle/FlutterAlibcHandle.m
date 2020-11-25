@@ -141,7 +141,7 @@ FlutterMethodChannel *_flutterAlibcChannel = nil;
     NSInteger res = [[AlibcTradeSDK sharedInstance].tradeService
                      openByUrl:url
                      identity:@"trade"
-                     webView:webviewVC.webView
+                     webView:nil
                      parentController:rootViewController
                      showParams:showParam
                      taoKeParams:taokeParam
@@ -175,28 +175,28 @@ FlutterMethodChannel *_flutterAlibcChannel = nil;
         //        });
     }];
     
-    if (res == 1) {
-        //        新建一个view
-        FlutterWxViewCtrlViewController *WxVC = [[FlutterWxViewCtrlViewController alloc] init];
-        WxVC.vc = webviewVC;
-        WxVC.accessBlock = ^(NSString * accessToken){
-            NSLog(@"accessToken = %@",accessToken);
-            if (accessToken) {
-                result(@{
-                    @"accessToken":accessToken
-                       });
-            }else{
-                result(@{
-                    @"accessToken":@""
-                       });
-            }
+//     if (res == 1) {
+//         //        新建一个view
+//         FlutterWxViewCtrlViewController *WxVC = [[FlutterWxViewCtrlViewController alloc] init];
+//         WxVC.vc = webviewVC;
+//         WxVC.accessBlock = ^(NSString * accessToken){
+//             NSLog(@"accessToken = %@",accessToken);
+//             if (accessToken) {
+//                 result(@{
+//                     @"accessToken":accessToken
+//                        });
+//             }else{
+//                 result(@{
+//                     @"accessToken":@""
+//                        });
+//             }
             
-        };
-        UINavigationController *root = [[UINavigationController alloc] initWithRootViewController:WxVC];
-        [rootViewController presentViewController:root animated:NO completion:^{
+//         };
+//         UINavigationController *root = [[UINavigationController alloc] initWithRootViewController:WxVC];
+//         [rootViewController presentViewController:root animated:NO completion:^{
             
-        }];
-    }
+//         }];
+//     }
 }
 #pragma mark --退出登录
 - (void)loginOut{
